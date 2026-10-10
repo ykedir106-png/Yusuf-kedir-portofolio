@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050505">
+<meta name="description" content="Yusuf Kedir — Web Developer, Programmer and PWA Developer">
 <title>Yusuf Kedir | Portfolio</title>
 
 <style>
@@ -39,8 +40,6 @@ a {
     background: #050505;
 }
 
-/* NAVBAR */
-
 header {
     padding: 18px 6%;
     background: #101010;
@@ -60,7 +59,9 @@ nav {
     white-space: nowrap;
 }
 
-.logo span {
+.logo span,
+.small-title span,
+h1 span {
     color: #ff8a16;
 }
 
@@ -81,12 +82,11 @@ nav {
 
 .hire {
     background: #ff8a16;
-    color: black;
+    color: #111;
     padding: 9px 16px;
     border-radius: 7px;
     font-weight: bold;
     font-size: 12px;
-    white-space: nowrap;
 }
 
 .menu {
@@ -99,8 +99,6 @@ nav {
     font-size: 20px;
 }
 
-/* HERO */
-
 .hero {
     padding: 70px 7%;
     min-height: 520px;
@@ -108,11 +106,9 @@ nav {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
-
     background-image:
         linear-gradient(#171717 1px, transparent 1px),
         linear-gradient(90deg, #171717 1px, transparent 1px);
-
     background-size: 28px 28px;
 }
 
@@ -123,18 +119,10 @@ nav {
     margin-bottom: 20px;
 }
 
-.small-title span {
-    color: #ff8a16;
-}
-
 h1 {
     font-size: clamp(36px, 5vw, 64px);
     line-height: 1.08;
     letter-spacing: -2px;
-}
-
-h1 span {
-    color: #ff8a16;
 }
 
 .description {
@@ -189,11 +177,9 @@ h1 span {
     font-size: 12px;
 }
 
-/* PROFILE PHOTO */
-
 .photo-area {
     position: relative;
-    min-height: 360px;
+    min-height: 390px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,6 +189,7 @@ h1 span {
     width: 310px;
     height: 310px;
     background: #191919;
+    border: 1px solid #333;
     border-radius: 50%;
     position: absolute;
 }
@@ -211,10 +198,12 @@ h1 span {
     width: 270px;
     height: 330px;
     object-fit: cover;
-    object-position: center;
+    object-position: center 22%;
+    border: 3px solid #ff8a16;
     border-radius: 45% 45% 20px 20px;
     position: relative;
     z-index: 1;
+    box-shadow: 0 18px 50px #0009;
 }
 
 .photo-label {
@@ -229,16 +218,14 @@ h1 span {
 }
 
 .label-one {
-    top: 65px;
+    top: 55px;
     left: 0;
 }
 
 .label-two {
-    bottom: 55px;
+    bottom: 45px;
     right: 0;
 }
-
-/* CLIENT STRIP */
 
 .clients {
     background: #111;
@@ -266,8 +253,6 @@ h1 span {
     color: #888;
     font-weight: bold;
 }
-
-/* GENERAL SECTIONS */
 
 section.content {
     padding: 75px 7%;
@@ -412,9 +397,7 @@ footer a {
     color: #ff8a16;
 }
 
-/* TABLET AND MOBILE RESPONSIVE */
-
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .nav-links {
         gap: 12px;
     }
@@ -429,13 +412,13 @@ footer a {
     }
 
     .photo {
-        width: 230px;
-        height: 290px;
+        width: 240px;
+        height: 300px;
     }
 
     .photo-circle {
-        width: 260px;
-        height: 260px;
+        width: 270px;
+        height: 270px;
     }
 
     .skills {
@@ -443,9 +426,7 @@ footer a {
     }
 }
 
-/* MOBILE PHONE */
-
-@media (max-width: 650px) {
+@media (max-width: 700px) {
     .container {
         width: 96%;
         margin: 8px auto;
@@ -507,7 +488,7 @@ footer a {
 
     .photo-area {
         grid-row: 1;
-        min-height: 300px;
+        min-height: 320px;
         margin-bottom: 10px;
     }
 
@@ -522,22 +503,18 @@ footer a {
     }
 
     .label-one {
-        top: 60px;
+        top: 48px;
         left: 0;
     }
 
     .label-two {
-        bottom: 40px;
+        bottom: 35px;
         right: 0;
     }
 
     h1 {
         font-size: clamp(38px, 10vw, 54px);
         letter-spacing: -1.5px;
-    }
-
-    .description {
-        font-size: 14px;
     }
 
     .clients {
@@ -566,9 +543,7 @@ footer a {
     }
 }
 
-/* SMALL PHONES */
-
-@media (max-width: 360px) {
+@media (max-width: 380px) {
     .logo {
         font-size: 17px;
     }
@@ -584,12 +559,21 @@ footer a {
     }
 
     .photo-area {
-        min-height: 270px;
+        min-height: 280px;
+    }
+
+    .photo-label {
+        font-size: 10px;
+        padding: 8px 9px;
     }
 
     .buttons .btn {
         padding: 10px 12px;
         font-size: 12px;
+    }
+
+    h1 {
+        font-size: 36px;
     }
 }
 </style>
@@ -612,15 +596,24 @@ footer a {
     </div>
 
     <a href="#contact" class="hire">Hire Me ↗</a>
-    <button class="menu" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <button class="menu" id="menuButton"
+        aria-label="Toggle navigation"
+        aria-expanded="false">☰</button>
 </nav>
 </header>
 
 <main class="hero">
-    <div>
-        <p class="small-title">WEB DEVELOPER <span>•</span> PROGRAMMER <span>•</span> PWA</p>
 
-        <h1>Crafting Seamless<br><span>Digital Experiences</span></h1>
+    <div>
+        <p class="small-title">
+            WEB DEVELOPER <span>•</span>
+            PROGRAMMER <span>•</span> PWA
+        </p>
+
+        <h1>Crafting Seamless<br>
+            <span>Digital Experiences</span>
+        </h1>
 
         <p class="description">
             I'm Yusuf Kedir, a passionate developer who creates modern,
@@ -634,9 +627,11 @@ footer a {
 
         <div class="social">
             <p>CONNECT WITH ME</p>
-            <a href="https://github.com/" target="_blank" rel="noopener">GH</a>
+            <a href="https://github.com/" target="_blank"
+                rel="noopener noreferrer">GH</a>
             <a href="mailto:ykedir106@gmail.com">✉</a>
-            <a href="https://wa.me/" target="_blank" rel="noopener">WA</a>
+            <a href="https://wa.me/" target="_blank"
+                rel="noopener noreferrer">WA</a>
         </div>
     </div>
 
@@ -644,14 +639,16 @@ footer a {
         <div class="photo-circle"></div>
         <div class="photo-label label-one">Hi, I'm Yusuf 👋</div>
 
-        <!-- Replace this image URL with your own photo if you want -->
+        <!-- Your own profile photo -->
         <img class="photo"
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85"
-        alt="Developer portrait"
-        onerror="this.style.display='none'">
+            src="./IMG_20260430_133831_176.jpg"
+            alt="Yusuf Kedir - Profile Photo"
+            width="270"
+            height="330">
 
         <div class="photo-label label-two">✦ Web Developer</div>
     </div>
+
 </main>
 
 <div class="clients">
@@ -659,6 +656,7 @@ footer a {
         <h2>Turning Ideas Into Reality</h2>
         <p>Creative thinking. Clean code. Useful products.</p>
     </div>
+
     <div class="client-names">
         <span>✳ Web Design</span>
         <span>◐ Development</span>
@@ -669,9 +667,10 @@ footer a {
 <section class="content" id="about">
     <p class="section-label">ABOUT ME</p>
     <h2 class="section-heading">Design with purpose.<br>Code with passion.</h2>
+
     <p class="section-description">
-        I enjoy turning ideas into clean, accessible and beautiful digital experiences
-        that work on mobile phones, tablets and desktop computers.
+        I enjoy turning ideas into clean, accessible and beautiful digital
+        experiences that work on mobile phones, tablets and desktop computers.
     </p>
 
     <div class="cards">
@@ -697,7 +696,7 @@ footer a {
 
 <section class="content" id="skills">
     <p class="section-label">MY TOOLBOX</p>
-    <h2 class="section-heading">Skills & Technologies</h2>
+    <h2 class="section-heading">Skills &amp; Technologies</h2>
     <p class="section-description">Technologies I use and continue to learn.</p>
 
     <div class="skills">
@@ -725,7 +724,9 @@ footer a {
             <div class="project-text">
                 <h3>Personal Portfolio</h3>
                 <p>A responsive portfolio to showcase my skills and projects.</p>
-                <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="tags">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
             </div>
         </article>
 
@@ -741,7 +742,7 @@ footer a {
         <article class="card project">
             <div class="project-image">🏢</div>
             <div class="project-text">
-                <h3>FEYA Import & Trading</h3>
+                <h3>FEYA Import &amp; Trading</h3>
                 <p>A business website concept for showcasing products and services.</p>
                 <div class="tags"><span>Business</span><span>PWA</span></div>
             </div>
@@ -752,6 +753,7 @@ footer a {
 <section class="content" id="blog">
     <p class="section-label">LATEST UPDATES</p>
     <h2 class="section-heading">My Blog</h2>
+
     <div class="cards">
         <article class="card">
             <h3>Why Responsive Design Matters</h3>
@@ -779,9 +781,17 @@ footer a {
         <h3>Yusuf Kedir</h3>
         <p>📍 Chiro city, Ethiopia</p>
         <p>✉️ ykedir106@gmail.com</p>
+
         <div class="buttons">
-            <a class="btn btn-orange" href="mailto:ykedir106@gmail.com?subject=Website%20Project">Email Me ↗</a>
-            <a class="btn btn-outline" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp ↗</a>
+            <a class="btn btn-orange"
+                href="mailto:ykedir106@gmail.com?subject=Website%20Project">
+                Email Me ↗
+            </a>
+            <a class="btn btn-outline"
+                href="https://wa.me/"
+                target="_blank" rel="noopener noreferrer">
+                WhatsApp ↗
+            </a>
         </div>
     </div>
 </section>
@@ -813,16 +823,6 @@ navLinks.querySelectorAll("a").forEach(function (link) {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
-</html>
-'''
-path = Path("/mnt/data/index.html")
-path.write_text(html, encoding="utf-8")
-print("Created /mnt/data/index.html")
-print("File size:", path.stat().st_size, "bytes")
-print("HTML starts:", html[:80].replace("\n", " "))
-print("HTML ends:", html[-80:].replace("\n", " "))
-print("Balanced main tags:", html.count("<html"), html.count("</html>"), html.count("<style>"), html.count("</style>"), html.count("<script>"), html.count("</script>"))
-text(f"Your complete responsive portfolio code is ready in {path}")
-print("Download: sandbox:/mnt/data/index.html")
-text("[Download index.html](sandbox:/mnt/data/index.html)")
+    </html>
