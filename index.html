@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<title>Yusuf Kedir | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    width: 94%;
+    margin: 20px auto;
+    border: 1px solid #333;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #050505;
+}
+
+/* NAVBAR */
+
+header {
+    padding: 18px 6%;
+    background: #101010;
+    border-bottom: 1px solid #292929;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #ff8a16;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ccc;
+    font-size: 13px;
+}
+
+.nav-links a:hover {
+    color: #ff8a16;
+}
+
+.hire {
+    background: #ff8a16;
+    color: black;
+    padding: 9px 16px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.menu {
+    display: none;
+    background: transparent;
+    color: white;
+    border: 1px solid #444;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+/* HERO */
+
+.hero {
+    padding: 70px 7%;
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+
+    background-image:
+        linear-gradient(#171717 1px, transparent 1px),
+        linear-gradient(90deg, #171717 1px, transparent 1px);
+
+    background-size: 28px 28px;
+}
+
+.small-title {
+    color: #bbb;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.small-title span {
+    color: #ff8a16;
+}
+
+h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: #ff8a16;
+}
+
+.description {
+    color: #bbb;
+    margin-top: 22px;
+    font-size: 14px;
+    max-width: 440px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 17px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-orange {
+    background: #ff8a16;
+    color: #111;
+}
+
+.btn-outline {
+    border: 1px solid #555;
+    color: white;
+}
+
+.social {
+    margin-top: 38px;
+}
+
+.social p {
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 12px;
+}
+
+.social a {
+    display: inline-block;
+    background: #171717;
+    border: 1px solid #333;
+    padding: 7px 10px;
+    border-radius: 6px;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+/* PROFILE PHOTO */
+
+.photo-area {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-circle {
+    width: 310px;
+    height: 310px;
+    background: #191919;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.photo {
+    width: 270px;
+    height: 330px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 45% 45% 20px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.photo-label {
+    position: absolute;
+    z-index: 2;
+    background: white;
+    color: #111;
+    padding: 10px 13px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.label-one {
+    top: 65px;
+    left: 0;
+}
+
+.label-two {
+    bottom: 55px;
+    right: 0;
+}
+
+/* CLIENT STRIP */
+
+.clients {
+    background: #111;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.clients h2 {
+    font-size: 19px;
+}
+
+.clients p {
+    color: #999;
+    font-size: 12px;
+}
+
+.client-names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    color: #888;
+    font-weight: bold;
+}
+
+/* GENERAL SECTIONS */
+
+section.content {
+    padding: 75px 7%;
+    border-top: 1px solid #242424;
+}
+
+.section-label {
+    color: #ff8a16;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+h2.section-heading {
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.section-description {
+    color: #aaa;
+    max-width: 650px;
+    font-size: 14px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #2d2d2d;
+    padding: 24px;
+    border-radius: 13px;
+    transition: .25s;
+    min-width: 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff8a16;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.icon {
+    font-size: 28px;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.skill {
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    text-align: center;
+    padding: 18px 5px;
+    font-size: 13px;
+}
+
+.skill span {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.project {
+    padding: 0;
+    overflow: hidden;
+}
+
+.project-image {
+    height: 140px;
+    background: #1b1b1b;
+    display: grid;
+    place-items: center;
+    font-size: 45px;
+}
+
+.project-text {
+    padding: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.tags span {
+    font-size: 10px;
+    padding: 4px 8px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    color: #ccc;
+}
+
+.contact-box {
+    margin-top: 28px;
+    padding: 28px;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 13px;
+}
+
+.contact-box p {
+    color: #aaa;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+footer {
+    padding: 23px 7%;
+    background: #111;
+    border-top: 1px solid #292929;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+}
+
+footer a {
+    color: #ff8a16;
+}
+
+/* TABLET AND MOBILE RESPONSIVE */
+
+@media (max-width: 850px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        gap: 20px;
+        padding: 55px 5%;
+    }
+
+    .photo {
+        width: 230px;
+        height: 290px;
+    }
+
+    .photo-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .skills {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE PHONE */
+
+@media (max-width: 650px) {
+    .container {
+        width: 96%;
+        margin: 8px auto;
+        border-radius: 13px;
+    }
+
+    header {
+        padding: 13px 4%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hire {
+        display: none;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+        background: #151515;
+        border: 1px solid #333;
+        border-radius: 10px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+
+    .nav-links a:hover {
+        background: #252525;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 35px 6% 45px;
+        gap: 15px;
+    }
+
+    .photo-area {
+        grid-row: 1;
+        min-height: 300px;
+        margin-bottom: 10px;
+    }
+
+    .photo {
+        width: 220px;
+        height: 270px;
+    }
+
+    .photo-circle {
+        width: 245px;
+        height: 245px;
+    }
+
+    .label-one {
+        top: 60px;
+        left: 0;
+    }
+
+    .label-two {
+        bottom: 40px;
+        right: 0;
+    }
+
+    h1 {
+        font-size: clamp(38px, 10vw, 54px);
+        letter-spacing: -1.5px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .clients {
+        padding: 25px 6%;
+    }
+
+    .client-names {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    section.content {
+        padding: 55px 6%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    footer {
+        padding: 22px 6%;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 360px) {
+    .logo {
+        font-size: 17px;
+    }
+
+    .photo {
+        width: 190px;
+        height: 240px;
+    }
+
+    .photo-circle {
+        width: 215px;
+        height: 215px;
+    }
+
+    .photo-area {
+        min-height: 270px;
+    }
+
+    .buttons .btn {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container" id="home">
+
+<header>
+<nav>
+    <a class="logo" href="#home"><span>▦</span> Yusuf Kedir</a>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <a href="#contact" class="hire">Hire Me ↗</a>
+    <button class="menu" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+</nav>
+</header>
+
+<main class="hero">
+    <div>
+        <p class="small-title">WEB DEVELOPER <span>•</span> PROGRAMMER <span>•</span> PWA</p>
+
+        <h1>Crafting Seamless<br><span>Digital Experiences</span></h1>
+
+        <p class="description">
+            I'm Yusuf Kedir, a passionate developer who creates modern,
+            responsive websites and useful digital products.
+        </p>
+
+        <div class="buttons">
+            <a href="#contact" class="btn btn-orange">Let's Talk ➤</a>
+            <a href="#projects" class="btn btn-outline">Portfolio ↗</a>
+        </div>
+
+        <div class="social">
+            <p>CONNECT WITH ME</p>
+            <a href="https://github.com/" target="_blank" rel="noopener">GH</a>
+            <a href="mailto:ykedir106@gmail.com">✉</a>
+            <a href="https://wa.me/" target="_blank" rel="noopener">WA</a>
+        </div>
+    </div>
+
+    <div class="photo-area">
+        <div class="photo-circle"></div>
+        <div class="photo-label label-one">Hi, I'm Yusuf 👋</div>
+
+        <!-- Replace this image URL with your own photo if you want -->
+        <img class="photo"
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85"
+        alt="Developer portrait"
+        onerror="this.style.display='none'">
+
+        <div class="photo-label label-two">✦ Web Developer</div>
+    </div>
+</main>
+
+<div class="clients">
+    <div>
+        <h2>Turning Ideas Into Reality</h2>
+        <p>Creative thinking. Clean code. Useful products.</p>
+    </div>
+    <div class="client-names">
+        <span>✳ Web Design</span>
+        <span>◐ Development</span>
+        <span>⌘ PWA Apps</span>
+    </div>
+</div>
+
+<section class="content" id="about">
+    <p class="section-label">ABOUT ME</p>
+    <h2 class="section-heading">Design with purpose.<br>Code with passion.</h2>
+    <p class="section-description">
+        I enjoy turning ideas into clean, accessible and beautiful digital experiences
+        that work on mobile phones, tablets and desktop computers.
+    </p>
+
+    <div class="cards">
+        <article class="card">
+            <div class="icon">✦</div>
+            <h3>My Mission</h3>
+            <p>Build useful digital products with clear design and a great user experience.</p>
+        </article>
+
+        <article class="card">
+            <div class="icon">⌘</div>
+            <h3>What I Do</h3>
+            <p>Responsive websites, progressive web apps and interactive web interfaces.</p>
+        </article>
+
+        <article class="card">
+            <div class="icon">↗</div>
+            <h3>My Goal</h3>
+            <p>Keep learning, improve my coding skills and create projects that solve real problems.</p>
+        </article>
+    </div>
+</section>
+
+<section class="content" id="skills">
+    <p class="section-label">MY TOOLBOX</p>
+    <h2 class="section-heading">Skills & Technologies</h2>
+    <p class="section-description">Technologies I use and continue to learn.</p>
+
+    <div class="skills">
+        <div class="skill"><span>🌐</span>HTML5</div>
+        <div class="skill"><span>🎨</span>CSS3</div>
+        <div class="skill"><span>⚡</span>JavaScript</div>
+        <div class="skill"><span>🐍</span>Python</div>
+        <div class="skill"><span>⚙️</span>C++</div>
+        <div class="skill"><span>📱</span>PWA</div>
+        <div class="skill"><span>🗄️</span>Supabase</div>
+        <div class="skill"><span>🐙</span>GitHub</div>
+        <div class="skill"><span>🚀</span>Vercel</div>
+        <div class="skill"><span>📐</span>Responsive UI</div>
+    </div>
+</section>
+
+<section class="content" id="projects">
+    <p class="section-label">MY PORTFOLIO</p>
+    <h2 class="section-heading">Featured Projects</h2>
+    <p class="section-description">A selection of web projects and ideas.</p>
+
+    <div class="cards">
+        <article class="card project">
+            <div class="project-image">💼</div>
+            <div class="project-text">
+                <h3>Personal Portfolio</h3>
+                <p>A responsive portfolio to showcase my skills and projects.</p>
+                <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            </div>
+        </article>
+
+        <article class="card project">
+            <div class="project-image">🕌</div>
+            <div class="project-text">
+                <h3>Masjida Tawbaa</h3>
+                <p>A community website concept for announcements and student registration.</p>
+                <div class="tags"><span>Website</span><span>Supabase</span></div>
+            </div>
+        </article>
+
+        <article class="card project">
+            <div class="project-image">🏢</div>
+            <div class="project-text">
+                <h3>FEYA Import & Trading</h3>
+                <p>A business website concept for showcasing products and services.</p>
+                <div class="tags"><span>Business</span><span>PWA</span></div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="content" id="blog">
+    <p class="section-label">LATEST UPDATES</p>
+    <h2 class="section-heading">My Blog</h2>
+    <div class="cards">
+        <article class="card">
+            <h3>Why Responsive Design Matters</h3>
+            <p>A good website should work smoothly on every screen, from a small phone to a desktop computer.</p>
+        </article>
+
+        <article class="card">
+            <h3>Learning Web Development</h3>
+            <p>Build projects step by step, test your code and keep learning through practice.</p>
+        </article>
+
+        <article class="card">
+            <h3>Building Progressive Web Apps</h3>
+            <p>PWA technology can make web experiences feel more like apps on supported devices.</p>
+        </article>
+    </div>
+</section>
+
+<section class="content" id="contact">
+    <p class="section-label">GET IN TOUCH</p>
+    <h2 class="section-heading">Let's build something great.</h2>
+    <p class="section-description">Have an idea or a project? Feel free to contact me.</p>
+
+    <div class="contact-box">
+        <h3>Yusuf Kedir</h3>
+        <p>📍 Chiro city, Ethiopia</p>
+        <p>✉️ ykedir106@gmail.com</p>
+        <div class="buttons">
+            <a class="btn btn-orange" href="mailto:ykedir106@gmail.com?subject=Website%20Project">Email Me ↗</a>
+            <a class="btn btn-outline" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp ↗</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <span>© <span id="year"></span> Yusuf Kedir. All rights reserved.</span>
+    <a href="#home">Back to top ↑</a>
+</footer>
+
+</div>
+
+<script>
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+
+menuButton.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.textContent = isOpen ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+'''
+path = Path("/mnt/data/index.html")
+path.write_text(html, encoding="utf-8")
+print("Created /mnt/data/index.html")
+print("File size:", path.stat().st_size, "bytes")
+print("HTML starts:", html[:80].replace("\n", " "))
+print("HTML ends:", html[-80:].replace("\n", " "))
+print("Balanced main tags:", html.count("<html"), html.count("</html>"), html.count("<style>"), html.count("</style>"), html.count("<script>"), html.count("</script>"))
+text(f"Your complete responsive portfolio code is ready in {path}")
+print("Download: sandbox:/mnt/data/index.html")
+text("[Download index.html](sandbox:/mnt/data/index.html)")
